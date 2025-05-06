@@ -15,8 +15,60 @@ The repository contains this file which documents the entire project.
 ## the overarching process
 The project starts by reading into the articles present in the articles folder by opening each file and reading it as a string. The next step involves processing the articles to extract place names. This is done by stanza which scans the text for geographic entities (GPE or LOC).
 When the place names have been extracted they are cleaned up to merge duplicates and remove endings like “‘s“ so that the map reflects accurate results. We then use geocoding to find the coordinates for these cleaned up place names so that these places can be plotted on the map. This is done by using named entity recognition(NER) to create a tsv file that has 3 columns, place name, latitude and longitude. For locations whose coordinated couldn't be
-found, we marked them as “NA”. These names and places are what we managed to omit from the NER_counts.tsv file without compromising on the places: Welch Nethanyahu October7 ZIM Ganges Supernova Strip IsraelPalestine AlJazeera MirandaCeland RepJaypal RepCori BasedMikeLee Ocean Jazz SouthAfricansfrom Africa4Palestine MajedalansariKan Wadi Gaza Carogennez Flinders Wallonia Tel Israel SistanBalochostan province Islamic Republic Iran SistanBaluchistan province Middle East Eye BabelMandaib strait zahrasultana Palestine_UN AlMasjid alOmari alKabir X Motaz azizamotaz09 Earth adoniaayebare TomWhiteGaza azzZahara Hamad QFFD Hezbollah Ahmadiyyah Zawiyah Panjur Pakistan Baluchistan UP Areas A PA
-La France Area C Gilo Har Gilo India Basmati
+found, we marked them as “NA”. These names and places are what we managed to omit from the NER_counts.tsv file without compromising on the places: 
+Nethanyahu
+October7
+ZIM Ganges
+Supernova
+Strip
+IsraelPalestine
+AlJazeera
+MirandaCeland
+RepJaypal 
+RepCori 
+BasedMikeLee
+Ocean Jazz
+SouthAfricansfrom
+Africa4Palestine
+MajedalansariKan
+Wadi
+Gaza
+Carogennez
+Flinders
+Wallonia 
+Tel Israel
+SistanBalochostan province
+Islamic Republic
+Iran SistanBaluchistanprovince
+Middle East Eye
+BabelMandaib strait
+zahrasultana
+Palestine_UN 
+AlMasjid
+alOmari
+alKabir
+X 
+Motaz
+azizamotaz09
+Earth 
+adoniaayebare
+TomWhiteGaza
+azzZahara 
+Hamad 
+QFFD 
+Hezbollah 
+Ahmadiyyah
+Zawiyah 
+Panjur
+Pakistan Baluchistan
+UP 
+Areas A 
+PA
+La France
+Area C 
+Gilo Har
+Gilo 
+India Basmati
 The API searches GeoNames for each place name in the NER_counts.tsvand returns its corresponding coordinates. If no results are found, no data is returned. A new file is created called NER_gazetteer.tsv where this information is then stored and missing coordinates are then manually added. Say which places
 Plotly.express is then used to create the map and pandas is used to merge data from the tsv file. By using plotly each location is represented by a marker on the map and the size of the marker shows how often a place was mentioned. The map is animated by month allowing us to see how news coverage shifts over time and contains ever place from the NER extraction. By making the map a HTML file, it allows anyone to explore it in their browser. A static image has also been generated which will be shown below. We also mapped the frequency of mentions that were extracted from articles published in January 2024. Part 4A uses gazetteer and regex while 4B uses NER, allowing us to compare the two approaches and how the geographic scope of news articles shifts over time.
 ## advantages and disadvantages of using gazetteer, regex and NER
