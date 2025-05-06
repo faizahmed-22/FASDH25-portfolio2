@@ -3,7 +3,7 @@ A repository for students' portfolios for mini-project 2
 # Mini Project 2 by Ayesha Munshi, Faiz Ahmed, and Fatima Karim
 This project aims to visualise places that are mentioned in articles to examine how the geographic scope of news articles shifts over time. The project uses regex and gazetteers to identify place names and locations in the texts.
 ## folder structure of the repository
-The repository has 3 folders titled articles, gazetteers and scripts. It also has a README file and gitignore.
+The repository has 4 folders titled articles, gazetteers outputs and scripts. It also has a README file and gitignore.
 ### articles
 It contains articles regarding the Gaza war, taken from the Al Jazeera website, going as far back as 2017. For part 2B of this project we had to create a path to this folder and then separate those articles written in january 2024 and count how often place names were mentioned in these articles, e.g. West Bank and Gaza Strip.
 ### gazetteers
